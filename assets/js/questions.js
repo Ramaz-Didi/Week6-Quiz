@@ -13,7 +13,7 @@ let quizQuestions = [{question: "Which function need to be called to stop contin
 ];
 
 
-var secondsLeft = 5;
+var secondsLeft = 60;//Quiz Time
 var correctAnswerNumber = -1;
 function startTime(){
 var timerInterval = setInterval(function () {
@@ -38,13 +38,13 @@ function sendMessage() {
 startQuiz.addEventListener("click", function (event) {
     if (event.target.matches("button")) 
     {
-        // startTime();
+        startTime();
         
         startScreenText.setAttribute("class","hide"); 
         
         for (var i = 0; i < quizQuestions.length; i++) 
         { getQuestions(i)
-
+        AnswerTheQuestion(correctAnswerNumber);
         }    
         
     }
@@ -74,12 +74,13 @@ function getQuestions(questionIndex)
                 multichoice.appendChild(button);  
                 
             }
-        AnswerTheQuestion(correctAnswerNumber);
+       
             
 }
 
     //Answer the question
-function AnswerTheQuestion(correctAnswerNumber) {
+function AnswerTheQuestion(correctAnswerNumber) 
+{
 
     buttonChoice.addEventListener("click", function (event) 
     {   var element = event.target.dataset.number;
