@@ -13,7 +13,11 @@
     <div class="scores"><a href="highscores.html">View Highscores</a></div>
 
     <div class="timer">Time: <span id="time">0</span></div>
-
+    <audio src="./assets/sfx/correct.wav" id="correctAudio" loop="loop"></audio>
+   
+    <audio id="incorrectAudio">
+      <source src="./assets/sfx/incorrect.wav" type="audio/wav">
+    </audio>
     <div class="wrapper">
       <div id="start-screen" class="start">
         <h1>Coding Quiz Challenge</h1>
@@ -22,13 +26,15 @@
           limit. Keep in mind that incorrect answers will penalize your
           score/time by ten seconds!
         </p>
-        <button id="start">Start Quiz</button>
+        <button type="button" id="startBtn">Start Quiz</button>
       </div>
 
       <div id="questions" class="hide">
         <h2 id="question-title"></h2>
-        <div id="multipleChoice" class="choices" data-number="0"></div>
+        <div id="" class="choices"></div>
       </div>
+
+       <div id="results" >  </div>  <!-- class="hide" -->
 
       <div id="end-screen" class="hide">
         <h2>All done!</h2>
