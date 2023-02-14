@@ -138,5 +138,3 @@ function questionTurns(questionAll) {
         }
     } //==================end of the question turn
     
- 
-
